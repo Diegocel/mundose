@@ -13,7 +13,7 @@
         "VolumeType": "gp2",
         "VolumeSize": 100
     },
-    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:${AWS_REGION}:${ACCOUNT_ID}:domain/${ES_DOMAIN_NAME}/*\"}]}",
+    "AccessPolicies":  "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:ESHttp*\",\"Resource\":\"arn:aws:es:us-east-2:372044012221:domain/eksworkshop-logging/*\"}]}",
     "SnapshotOptions": {},
     "CognitoOptions": {
         "Enabled": false
@@ -33,7 +33,7 @@
         "InternalUserDatabaseEnabled": true,
         "MasterUserOptions": {
             "MasterUserName": "eksworkshop",
-            "MasterUserPassword": "k6ZwAX+u52YnKedo_Ek1$"
+            "MasterUserPassword": "qxn9ZuNctjeaayDH_Ek1$"
         }
     }
 }
