@@ -1,0 +1,32 @@
+apiVersion: iam.amazonaws.com/v1beta1
+kind: Role
+metadata:
+  name: ebs-csi-controller-role
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::${ACCOUNT_ID}:role/AmazonEKS_EBS_CSI_DriverRole
+  namespace: prometheus
+spec:
+  assumeRolePolicy:
+    Version: "2012-10-17"
+    Statement:
+      - Effect: Allow
+        Principal:
+          Service:
+            - ec2.amazonaws.com
+            - eks.amazonaws.com
+        Action:
+          - sts:AssumeRole
+inlinePolicy:
+    policyName: ebs-csi-controller-policy
+    policyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Action:
+            - ec2:AttachVolume
+            - ec2:DetachVolume
+            - ec2:DescribeVolumes
+            - ec2:DescribeInstances
+            - ec2:DescribeAvailabilityZones
+          Resource: "*"
+
