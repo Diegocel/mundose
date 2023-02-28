@@ -7,7 +7,7 @@
               "es:ESHttp*"
           ],
           "Resource": [
-              "arn:aws:es:us-east-2:${ACCOUNT_ID}:domain/eksworkshop-logging"
+              "arn:aws:es:us-east-2:372044012221:domain/eksworkshop-logging"
           ]
       }
   ]
